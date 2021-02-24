@@ -10,17 +10,28 @@ export default function CadastroCliente({ navigation }) {
     const[cpfCnpj,setCpfCnpj] = useState('');
 
     async function salvarCliente (cliente){
+
+
         const data = {
-            id: 1,
+            codigoCliente: 0,
             nomeCliente: cliente.nomeCliente,
             cpfCnpj: cliente.cpfCnpj
         }
 
-        const realm = await getRealm();
+        try{
+            const realm = await getRealm();
 
-        realm.write(() => {
-            realm.create('Cliente',data);
-        })
+            const currentIdNum = realm.objects('Cliente').max('codigoCliente');
+
+            data.codigoCliente = currentIdNum + 1;
+
+            realm.write(() => {
+                realm.create('Cliente',data);
+            })
+
+        }catch(err){
+            alert('deu ruim' + err)
+        }
     }
 
     function handleSalvarCliente (){
