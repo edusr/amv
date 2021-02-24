@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
 export const Container = styled.View`
-    background-color: #aabbcc
+    background-color: #EEECEB
     flex: 1
 `;
 
