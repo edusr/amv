@@ -1,26 +1,48 @@
-import styled from 'styled-components/native'
+import { StyleSheet } from "react-native";
 
-export const Container = styled.View`
-    background-color: #EEECEB
-    flex: 1
-    justify-content: center
-    
-`;
-
-export const Title = styled.Text`
-    text-align: center
-    font-weight: bold
-    font-size: 25px
-`;
-
-export const Form = styled.View`
-
-`;
-
-export const Input = styled.TextInput.attrs({placeHolderTextColor:'#999'})`
-background-color: #FFF
-padding: 12px 15px
-border-radius: 4px
-color: #333
-margin: 5px
-`;
+export const styles = StyleSheet.create({
+    background: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#e7e7e7',
+    },
+    containerLogo: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '90%',
+        paddingBottom: 50
+    },
+    input: {
+        backgroundColor: '#fff',
+        width: '90%',
+        marginBottom: 15,
+        color: '#222',
+        fontSize: 17,
+        borderRadius: 7,
+        padding: 10
+    },
+    buttonSubmit: {
+        backgroundColor: '#35aaff',
+        width: '90%',
+        height: 45,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 7,
+    },
+    textButtonSubmit: {
+        color: '#fff',
+        fontSize: 20,
+    },
+    buttonForgot: {
+        marginTop: 20,
+    },
+    textButtonForgot: {
+        color: '#222'
+    }
+});
