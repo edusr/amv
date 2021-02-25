@@ -18,20 +18,20 @@ export default function Login({ navigation }) {
   const [opacity] = useState(new Animated.Value(0));
   const [logo] = useState(new Animated.ValueXY({ x: 175, y: 150 }));
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('root');
+  const [password, setPassword] = useState('root');
 
   const [isLoading, setIsLoading] = useState(false);
 
   function keyboardDidShow() {
     Animated.parallel([
       Animated.timing(logo.x, {
-        toValue: 125,
+        toValue: 110,
         duration: 100,
         useNativeDriver: false
       }),
       Animated.timing(logo.y, {
-        toValue: 110,
+        toValue: 90,
         duration: 100,
         useNativeDriver: false
       }),

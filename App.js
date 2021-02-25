@@ -4,11 +4,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Login from './src/pages/Login';
 import Home from './src/pages/Home';
-import { View, Image } from 'react-native';
+import IconHeaderLeft from './src/pages/Home/IconHeaderLeft';
 
 const Stack = createStackNavigator();
 
-export default function App() {
+export default function App({navigation}) {
 
   return (
 
@@ -21,14 +21,8 @@ export default function App() {
           options={{
             title: 'Home',
             headerLeft: props => {
-              <View>
-                <Image
-                  style={{width:50,height:50}}
-                  source={require('./src/assets/images/logo.png')}
-                />
-                <View />
-              </View>
-            },
+              return <IconHeaderLeft navigation={navigation} />
+            }
           }}
           />
       </Stack.Navigator>
